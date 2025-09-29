@@ -21,8 +21,8 @@ class Textarea extends Input
         ?string $name = null,
         ?string $id = null,
     ) {
-        $this->autosize = $autosize;
-        
+        $this->autosize = $autosize; // Assign the autosize property
+
         parent::__construct(
             label: $label,
             hint: $hint,
