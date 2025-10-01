@@ -10,6 +10,7 @@ class Textarea extends Input
         bool $autosize = false,
         bool $borderless = false,
         bool $shadowless = false,
+        bool $disabled = false,  // Add this parameter
         ?string $label = null,
         ?string $hint = null,
         ?string $cornerHint = null,
@@ -27,6 +28,7 @@ class Textarea extends Input
         parent::__construct(
             borderless: $borderless,
             shadowless: $shadowless,
+            disabled: $disabled,  // Pass it to the parent constructor
             label: $label,
             hint: $hint,
             cornerHint: $cornerHint,
