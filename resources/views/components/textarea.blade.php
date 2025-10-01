@@ -6,7 +6,7 @@
     $rows = $attributes->get('rows', 4);
     $initialHeight = ($rows * 1.5) + 0.75;
 @endphp
-<div class="@if($disabled) opacity-60 @endif">
+<div class="@if(!empty($disabled) && $disabled) opacity-60 @endif">
     @if ($label || $cornerHint)
         <div class="flex {{ !$label && $cornerHint ? 'justify-end' : 'justify-between' }} mb-1">
             @if ($label)
@@ -120,21 +120,12 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('textareaAutosize', (config) => ({
         initialHeight: config.initialHeight,
         shouldAutosize: config.shouldAutosize,
-        supportsFieldSizing: false,
 
         init() {
-            // Check if browser supports field-sizing CSS property
-            this.supportsFieldSizing = CSS.supports('field-sizing', 'content');
-
-            // Only use JavaScript fallback if field-sizing is not supported
-            if (!this.supportsFieldSizing) {
-                this.render();
-            }
+            this.render();
         },
 
         render() {
-            if (this.supportsFieldSizing) return;
-
             if (this.$el.scrollHeight > 0) {
                 this.$el.style.height = this.initialHeight + 'rem';
                 this.$el.style.height = this.$el.scrollHeight + 'px';
@@ -142,7 +133,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         resize() {
-            if (this.shouldAutosize && !this.supportsFieldSizing) {
+            if (this.shouldAutosize) {
                 this.render();
             }
         }
