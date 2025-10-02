@@ -10,3 +10,4 @@ yarn-error.log
 .vscode
 .php-cs-fixer.cache
 resources/views/.DS_Store
+.DS_Store
