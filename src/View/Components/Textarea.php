@@ -28,7 +28,6 @@ class Textarea extends Input
         parent::__construct(
             borderless: $borderless,
             shadowless: $shadowless,
-            disabled: $disabled,
             label: $label,
             hint: $hint,
             cornerHint: $cornerHint,
