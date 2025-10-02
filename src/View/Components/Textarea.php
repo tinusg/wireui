@@ -8,6 +8,9 @@ class Textarea extends Input
 
     public function __construct(
         bool $autosize = false,
+        bool $borderless = false,
+        bool $shadowless = false,
+        bool $disabled = false,
         ?string $label = null,
         ?string $hint = null,
         ?string $cornerHint = null,
@@ -15,14 +18,18 @@ class Textarea extends Input
         ?string $rightIcon = null,
         ?string $prefix = null,
         ?string $suffix = null,
-        bool $shadowless = false,
-        bool $disabled = false,
-        ?string $name = null,
-        ?string $id = null,
+        ?string $prepend = null,
+        ?string $append = null,
+        bool $errorless = false,
+        bool $spinner = false
     ) {
-        $this->autosize = $autosize; // Assign the autosize property
+        $this->autosize = $autosize;
 
         parent::__construct(
+            autosize: $autosize,
+            borderless: $borderless,
+            shadowless: $shadowless,
+            disabled: $disabled,
             label: $label,
             hint: $hint,
             cornerHint: $cornerHint,
@@ -30,10 +37,10 @@ class Textarea extends Input
             rightIcon: $rightIcon,
             prefix: $prefix,
             suffix: $suffix,
-            shadowless: $shadowless,
-            disabled: $disabled,
-            name: $name,
-            id: $id,
+            prepend: $prepend,
+            append: $append,
+            errorless: $errorless,
+            spinner: $spinner
         );
     }
 
