@@ -52,6 +52,9 @@
         "phpcs": "./vendor/bin/php-cs-fixer fix"
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "1.19-dev"
+        },
         "laravel": {
             "providers": [
                 "WireUi\\Providers\\WireUiServiceProvider"
