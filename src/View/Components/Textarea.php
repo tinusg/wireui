@@ -26,7 +26,6 @@ class Textarea extends Input
         $this->autosize = $autosize;
 
         parent::__construct(
-            autosize: $autosize,
             borderless: $borderless,
             shadowless: $shadowless,
             disabled: $disabled,
