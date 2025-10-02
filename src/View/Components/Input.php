@@ -98,7 +98,7 @@ class Input extends FormComponent
 
     protected function getDefaultColorClasses(): string
     {
-        return Str::of('placeholder-secondary-400 dark:bg-secondary-800 dark:text-secondary-400')
+        return Str::of('placeholder-secondary-400 dark:bg-secondary-800 dark:text-white')
             ->append(' dark:placeholder-secondary-500')
             ->unless($this->borderless, function (Stringable $stringable) {
                 return $stringable
