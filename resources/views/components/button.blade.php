@@ -17,6 +17,9 @@
         <x-dynamic-component
             :component="WireUi::component('icon')"
             :name="$icon"
+            @if($preventDoubleClick && $attributes->get('type') === 'submit')
+                onclick="this.disabled=true; this.form.submit();"
+            @endif
             class="{{ $iconSize }} shrink-0"
         />
     @endif

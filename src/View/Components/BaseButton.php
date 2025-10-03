@@ -22,7 +22,8 @@ abstract class BaseButton extends Component
         public ?string $rightIcon = null,
         public ?string $spinner = null,
         public ?string $loadingDelay = null,
-        public ?string $href = null
+        public ?string $href = null,
+        public ?bool $preventDoubleClick = true
     ) {
     }
 
