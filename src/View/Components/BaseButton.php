@@ -15,6 +15,7 @@ abstract class BaseButton extends Component
         public bool $outline = false,
         public bool $flat = false,
         public bool $full = false,
+        public bool $preventDoubleClick = true,
         public ?string $color = null,
         public ?string $size = null,
         public ?string $label = null,
@@ -22,8 +23,7 @@ abstract class BaseButton extends Component
         public ?string $rightIcon = null,
         public ?string $spinner = null,
         public ?string $loadingDelay = null,
-        public ?string $href = null,
-        public ?bool $preventDoubleClick = true
+        public ?string $href = null
     ) {
     }
 
